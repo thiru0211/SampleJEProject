@@ -38,7 +38,7 @@ public class JE_OP_4_Reports {
 	public void user_is_navigating_to_jet_edge_Signin_url_is(String URL) {
 		System.setProperty("webdriver.chrome.driver", ".\\Driver\\chromedriver.exe");
 		ChromeOptions option=new ChromeOptions();
-		//option.addArguments("--headless=new");
+		option.addArguments("--headless=new");
 		driver=new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.get(URL);
@@ -65,7 +65,7 @@ public class JE_OP_4_Reports {
 
 	@Then("Check Tail button Is Displayed Or Not To Check Reports")
 	public void Check_Tail_button_Is_Displayed_Or_Not() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnContinueTail")));
 		ele = driver.findElement(By.id("btnContinueTail"));
 		boolean displayed = ele.isDisplayed();
@@ -75,7 +75,7 @@ public class JE_OP_4_Reports {
 
 	@Then("Select Valid Tail To Check Reports")
 	public void Select_Valid_Tail_To_Check_MGReport() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ddlTail")));
 		ele = driver.findElement(By.id("ddlTail"));
 		Select sel=new Select(ele);
@@ -84,7 +84,7 @@ public class JE_OP_4_Reports {
 
 	@And("Click Continue button To Check Reports")
 	public void Click_Continue_button_To_Check_MGReport() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnContinueTail")));
 		ele1 = driver.findElement(By.id("btnContinueTail"));
 		ele1.click();
@@ -92,18 +92,18 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Piolt Roster In Reports")
 	public void Click_MSReport_In_To_Check_MGReport() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancPLTROS\"]/span")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancPLTROS\"]/span"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[2]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[2]/a/span"));
 		ele1.click();
 	}
 
 	@And("Select Valid Month In Calendar In Piolt Roster")
 	public void Select_Valid_Month_In_Calendar_In_Piolt_Roster() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
 		ele.click();
@@ -114,7 +114,7 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Excel button In Piolt Roster")
 	public void Click_Excel_button_In_Piolt_Roster() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -122,7 +122,7 @@ public class JE_OP_4_Reports {
 
 	@And("Click Duty button In Piolt Roster")
 	public void Click_Duty_button_In_Piolt_Roster() throws InterruptedException {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_gvRoaster_lblCrewName_0")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_gvRoaster_lbl4_5"));
 		if(ele.isDisplayed()) {
@@ -139,12 +139,12 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Flight Activity In Reports")
 	public void Click_Flight_Activity_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancFLACT\"]/span")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancFLACT\"]/span"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[3]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[3]/a/span"));
 		ele1.click();
 	}
 
@@ -159,7 +159,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -176,7 +176,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Calendar
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -197,7 +197,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -205,7 +205,7 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Leg Radio button In Flight Activity")
 	public void Click_Leg_Radio_button_In_Flight_Activity() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_rdoType_1")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_rdoType_1"));
 		ele.click();
@@ -213,12 +213,12 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Flight Activity 1.0 In Reports")
 	public void Click_Flight_Activity_10_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancFLACT1\"]/span[1]")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancFLACT1\"]/span[1]"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[4]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[4]/a/span"));
 		ele1.click();
 	}
 
@@ -233,7 +233,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -260,7 +260,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
 		ele.click();
@@ -271,7 +271,7 @@ public class JE_OP_4_Reports {
 
 	@And("Click View button In Flight Activity 1.0")
 	public void Click_View_button_In_Flight_Activity_10() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -279,7 +279,7 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Leg Radio button In Flight Activity 1.0")
 	public void Click_Leg_Radio_button_In_Flight_Activity_10() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_rdoType_1")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_rdoType_1"));
 		ele.click();
@@ -287,12 +287,12 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Owner Trip Expense In Reports")
 	public void Click_Owner_Trip_Expense_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancOWNTRPEXP\"]/span")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancOWNTRPEXP\"]/span"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[5]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[5]/a/span"));
 		ele1.click();
 	}
 
@@ -307,7 +307,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Calendar
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -336,7 +336,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtTrip")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtTrip"));
 		ele.sendKeys("6974401");
@@ -353,7 +353,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -362,7 +362,7 @@ public class JE_OP_4_Reports {
 	@Then("Click Any View button In Owner Trip Expense")
 	public void Click_Any_View_button_In_Owner_Trip_Expense() throws InterruptedException {
 		Thread.sleep(2000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_gvActualSummary_imbView_1")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_gvActualSummary_imbView_1"));
 		ele.click();
@@ -370,7 +370,7 @@ public class JE_OP_4_Reports {
 
 	@And("Click Back button In Owner Trip Expense")
 	public void Click_Back_button_In_Owner_Trip_Expense() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_btnBack")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_btnBack"));
 		ele.click();
@@ -378,7 +378,7 @@ public class JE_OP_4_Reports {
 
 	@And("Click Excel button In Owner Trip Expense")
 	public void Click_Excel_button_In_Owner_Trip_Expense() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -386,12 +386,12 @@ public class JE_OP_4_Reports {
 
 	@Then("Click 380 Trip Expense In Reports")
 	public void Click_380_Trip_Expense_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancOWNTRP380\"]/span[1]")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancOWNTRP380\"]/span[1]"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[6]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[6]/a/span"));
 		ele1.click();
 	}
 
@@ -406,7 +406,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Calendar
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -435,7 +435,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -447,12 +447,12 @@ public class JE_OP_4_Reports {
 
 	@Then("Click Charter Trip Expense In Reports")
 	public void Click_Charter_Trip_Expense_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancCHTRTRPEXP\"]/span")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancCHTRTRPEXP\"]/span"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[7]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[7]/a/span"));
 		ele1.click();
 	}
 
@@ -467,7 +467,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Calendar
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -480,7 +480,7 @@ public class JE_OP_4_Reports {
 
 	@And("Click View button In Charter Trip Expense")
 	public void Click_View_button_In_Charter_Trip_Expense() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -488,7 +488,7 @@ public class JE_OP_4_Reports {
 
 	@Then("Click GL Wise Expense In Reports")
 	public void ClickGLWiseExpenseInReports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
 		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
 		ele.click();
@@ -508,7 +508,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -529,7 +529,7 @@ public class JE_OP_4_Reports {
 	@Then("Select Single Expense Checkbox In GL Wise Expense")
 	public void Select_Single_Expense_Checkbox_In_GL_Wise_Expense() throws InterruptedException {
 		
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtTripType")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtTripType"));
 		ele.click();
@@ -541,7 +541,7 @@ public class JE_OP_4_Reports {
 	
 	@And("Click View button In GL Wise Expense")
 	public void Click_View_button_In_GL_Wise_Expense() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -550,7 +550,7 @@ public class JE_OP_4_Reports {
 	@Then("Select Multiple Expense Checkbox In GL Wise Expense")
 	public void Select_Multiple_Expense_Checkbox_In_GL_Wise_Expense() throws InterruptedException {
 		Thread.sleep(2000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtTripType")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtTripType"));
 		ele.click();
@@ -567,7 +567,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Select All Expense Checkbox In GL Wise Expense")
 	public void Select_All_Expense_Checkbox_In_GL_Wise_Expense() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtTripType")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtTripType"));
 		ele.click();
@@ -579,7 +579,7 @@ public class JE_OP_4_Reports {
 	@Then("Click Excel button In GL Wise Expense")
 	public void Click_Excel_button_In_GL_Wise_Expense() throws InterruptedException {
 		Thread.sleep(6000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -587,12 +587,12 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click Owner Revenue Payable In Reports")
 	public void Click_Owner_Revenue_Payable_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancOWNPAY\"]/span")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancOWNPAY\"]/span"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[9]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[9]/a/span"));
 		ele1.click();
 	}
 	
@@ -607,7 +607,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -635,7 +635,7 @@ public class JE_OP_4_Reports {
 	@And("Click View button In Owner Revenue Payable")
 	public void Click_View_button_In_Owner_Revenue_Payable() throws InterruptedException {
 		Thread.sleep(2000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -652,7 +652,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -660,12 +660,12 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click Payment History In Reports")
 	public void Click_Payment_History_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
-		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]")));
+		ele = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/a/i[1]"));
 		ele.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ancPAYHIS\"]/span")));
-		ele1 = driver.findElement(By.xpath("//*[@id=\"ancPAYHIS\"]/span"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[10]/a/span")));
+		ele1 = driver.findElement(By.xpath("/html/body/form/div[4]/div/div[1]/div[2]/div/ul/li[4]/div/ul/li[10]/a/span"));
 		ele1.click();
 	}
 	
@@ -680,7 +680,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -699,7 +699,7 @@ public class JE_OP_4_Reports {
 	
 	@And("Click View button In Payment History")
 	public void Click_View_button_In_Payment_History() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -708,7 +708,7 @@ public class JE_OP_4_Reports {
 	@Then("Click Excel button In Payment History")
 	public void Click_Excel_button_In_Payment_History() throws InterruptedException {
 		Thread.sleep(5000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_imbExport")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_imbExport"));
 		ele.click();
@@ -716,7 +716,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click Fuel Uplift In Reports")
 	public void Click_Fuel_Uplift_In_Reports() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
 		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
 		ele.click();
@@ -736,7 +736,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -754,7 +754,7 @@ public class JE_OP_4_Reports {
 	
 	@And("Click View button In Fuel Uplift")
 	public void Click_View_button_In_Fuel_Uplift() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -762,7 +762,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click View button In The Table")
 	public void Click_View_button_In_The_Table() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_gvSummary_imbView_1")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_gvSummary_imbView_1"));
 		ele.click();
@@ -770,7 +770,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click Back button In Fuel Uplift")
 	public void Click_Back_button_In_Fuel_Uplift() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_btnSummary")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_btnSummary"));
 		ele.click();
@@ -778,7 +778,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click Pilot Salary In Reports")
 	public void Click_Pilot_Salary_In_Reports() throws InterruptedException {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
 		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
 		ele.click();
@@ -799,7 +799,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -811,7 +811,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click View button In Pilot Salary")
 	public void Click_View_button_In_Pilot_Salary() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -820,7 +820,7 @@ public class JE_OP_4_Reports {
 	@And("Click View button In The Table In Pilot Salary")
 	public void Click_View_button_In_The_Table_In_Pilot_Salary() throws InterruptedException {
 		Thread.sleep(2000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ContentPlaceHolder1_gvSummary_imbEdit_0")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_gvSummary_imbEdit_0"));
 		if(ele.isDisplayed()) {
@@ -836,7 +836,7 @@ public class JE_OP_4_Reports {
 		
 	@Then("Click Back button In Pilot Salary")
 	public void Click_Back_button_In_Pilot_Salary() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_btnBack")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_btnBack"));
 		ele.click();
@@ -844,7 +844,7 @@ public class JE_OP_4_Reports {
 		
 	@Then("Click Major Events In Reports")
 	public void Click_Major_Events_In_Reports() throws InterruptedException {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
 		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
 		ele.click();
@@ -870,7 +870,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -888,7 +888,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click View button In Major Events")
 	public void Click_View_button_In_Major_Events() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
@@ -900,7 +900,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click Lost Revenue In Reports")
 	public void Click_Lost_Revenue_In_Reports() throws InterruptedException {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]")));
 		ele = driver.findElement(By.xpath("//*[@id=\"liMainReports\"]/a/i[1]"));
 		ele.click();
@@ -925,7 +925,7 @@ public class JE_OP_4_Reports {
 		catch (NoAlertPresentException e) {
 			System.out.println("No Alert Message Is Displayed");
 		}
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_txtFromMonth")));
 		//From Month
 		ele = driver.findElement(By.id("ContentPlaceHolder1_txtFromMonth"));
@@ -943,7 +943,7 @@ public class JE_OP_4_Reports {
 	
 	@Then("Click View button In Lost Revenue")
 	public void Click_View_button_In_Lost_Revenue() {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(2));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ContentPlaceHolder1_ButSubmit")));
 		ele = driver.findElement(By.id("ContentPlaceHolder1_ButSubmit"));
 		ele.click();
