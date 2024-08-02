@@ -44,7 +44,7 @@ Feature: REPORTS
 
 
   @TC_05
-  Scenario: Reports:Flight Activity1.0
+  Scenario: Reports:Flight Activity pax
     Given To Check Reports User is navigating to JetEdge URL is "https://preprod.flyjetedge.aero/ownerV2/login.aspx"
     When To Check Reports User Enter Valid username and Valid password are "soundharya@sankarasoftware.com" and "Soundharya@123"
     And click the login button To Check Reports
@@ -56,7 +56,7 @@ Feature: REPORTS
     And close the Reports Page
 
   @TC_06
-  Scenario: Reports:Flight Activity1.0
+  Scenario: Reports:Flight Activity pax
     Given To Check Reports User is navigating to JetEdge URL is "https://preprod.flyjetedge.aero/ownerV2/login.aspx"
     When To Check Reports User Enter Valid username and Valid password are "soundharya@sankarasoftware.com" and "Soundharya@123"
     And click the login button To Check Reports
